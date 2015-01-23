@@ -20,16 +20,18 @@ public class Hero {
 	}
 	
 	//public methods///////////////////////////////////////////////////////////////////////////////
-	public void fight(){
-		if(hitAttempt() == false){
+	public boolean fight(){
+		if(hitAttempt() == true){
 			System.out.println(this.name + " has hit the opponent dealing " + hitDamage() + " damage.");
+			return true;
 		}else{
 			System.out.println(this.name + " has missed the opponent.");
+			return false;
 		}
 	}
 	
 	public void show(){
-		System.out.println("Name: " + this.name + "/nStrength: " + this.strength + "/nSpeed: " + this.speed + "/nHealth: " + this.health);
+		System.out.println("Name: " + this.name + "\nStrength: " + this.strength + "\nSpeed: " + this.speed + "\nHealth: " + this.health);
 	}
 	
 	//private methods////////////////////////////////////////////////////////////////////////////
@@ -40,7 +42,7 @@ public class Hero {
 	}
 		
 	private boolean hitAttempt(){
-		if(Math.random() >= 80){
+		if(Math.random() >= .8){
 			return true;
 		}else{
 			return false;
