@@ -13,9 +13,24 @@ public class Hero {
 	public String name;
 	
 	//constructor/////////////////////////////////////////////////////////////////////////////////
-	public void Hero(String name){
+	public Hero(String name){
 		this.name = name;
 		
 		generateAbilities();
+	}
+	
+	//private methods////////////////////////////////////////////////////////////////////////////
+	private void generateAbilities(){
+		this.strength = (int)(Math.random() * 100) + 1;
+		this.speed = (int)(Math.random() * 100) + 1;
+		this.health = (int)(Math.random() * 100) + 1;
+	}
+	
+	public void fight(){
+		if(hitAttempt() == false){
+			System.out.println(this.name + " has hit the opponent dealing " + hitDamage() + " damage.")
+		}else{
+			System.out.println(this.name + " has missed the opponent.")
+		}
 	}
 }
