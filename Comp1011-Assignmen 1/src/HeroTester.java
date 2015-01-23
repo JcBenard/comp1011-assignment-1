@@ -1,6 +1,6 @@
 /**
  * @author Jean-Claude Benard
- * @version 3 - Added generateAbilites and fight methods
+ * @version 4 - Added show, hitAttempt and hitDamage methods to the hero class
  * Program Description: Test the creation of the hero object and the assiociated methods
  */
 public class HeroTester {
