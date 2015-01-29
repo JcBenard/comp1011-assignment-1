@@ -8,7 +8,7 @@ public class Hero {
 	private int strength;
 	private int speed;
 	private int health;
-	private double hitRoll;
+	private int hitRoll;
 	
 	//public properties////////////////////////////////////////////////////////////////////////////
 	public String name;
@@ -23,10 +23,10 @@ public class Hero {
 	//public methods///////////////////////////////////////////////////////////////////////////////
 	public boolean fight(){//make the hero fight
 		if(hitAttempt() == true){
-			System.out.println(this.name + " has hit the opponent dealing " + hitDamage() + " damage. They rolled a " + hitRoll + " out of 1.");
+			System.out.println(this.name + " has hit the opponent dealing " + hitDamage() + " damage. They rolled a " + hitRoll + " out of 10.");
 			return true;
 		}else{
-			System.out.println(this.name + " has missed the opponent. They rolled a " + hitRoll + " out of 1.");
+			System.out.println(this.name + " has missed the opponent. They rolled a " + hitRoll + " out of 10.");
 			return false;
 		}
 	}
@@ -44,7 +44,7 @@ public class Hero {
 		
 	private boolean hitAttempt(){//make the hero attempt to hit		
 		
-		hitRoll = Math.floor((Math.random() * 10) +1) ;
+		hitRoll = (int)((Math.random() * 10) +1) ;
 		if(hitRoll > 8){
 			return true;
 		}else{
